@@ -152,14 +152,24 @@ body[data-top="dark"] .side-nav{color:#fff}
 .eco-box{border:1px solid var(--line-l);border-radius:20px;overflow:hidden}
 .eco-assump{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;padding:12px 20px;background:var(--card-l);border-radius:14px;font-size:12px;color:var(--mut-l);letter-spacing:.02em}
 
+/* ── responsive helpers (mobile only, no desktop impact) ── */
+.split-head{display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;align-items:end}
+.eco-main{display:grid;grid-template-columns:1fr 1fr}
+.closing-sec{min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:100px 48px 80px}
+.next-line{white-space:nowrap}
+
 @media(max-width:900px){
   .g4{grid-template-columns:repeat(2,1fr)} .motors{grid-template-columns:1fr}
   .pric,.eco-main{grid-template-columns:1fr}
+  .split-head{grid-template-columns:1fr;gap:20px}
 }
 @media(max-width:680px){
   .sec{padding:110px 22px}.sec--auto{padding:120px 22px 80px}
   .g2,.g3,.g4,.motors{grid-template-columns:1fr}
   .side-nav{display:none}
+  .closing-sec{padding:110px 22px 60px}
+  .next-line{white-space:normal}
+  .topbar .meta{display:none}
 }
 </style></head>
 <body data-top="dark">
@@ -207,7 +217,7 @@ body[data-top="dark"] .side-nav{color:#fff}
 <!-- 02 QUÉ INCLUYE -->
 <section id="includes" class="sec sec--light sec--auto" data-theme="light" data-title="includes">
 <div class="wrap">
- <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;align-items:end;margin-bottom:40px">
+ <div class="split-head" style="margin-bottom:40px">
    <div>
      <div class="eyebrow reveal"><span class="n">02</span><span class="t">Qu&eacute; incluye</span></div>
      <h2 class="h2 reveal d1">Todo lo necesario para<br>operar el canal.</h2>
@@ -304,7 +314,7 @@ body[data-top="dark"] .side-nav{color:#fff}
  </div>
 
  <!-- Main display -->
- <div class="eco-box eco-main reveal d3" style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr">
+ <div class="eco-box eco-main reveal d3" style="margin-top:24px">
    <div style="padding:34px 30px">
      <div id="eco-year-label" class="eco-val" style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut-l);margin-bottom:14px">A&ntilde;o 1</div>
      <div id="eco-net" class="eco-val" style="font-size:clamp(36px,4.2vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1">&euro;468.000</div>
@@ -377,7 +387,7 @@ body[data-top="dark"] .side-nav{color:#fff}
 <section id="terms" class="sec sec--light sec--auto" data-theme="light" data-title="terms">
 <div class="wrap">
  <div class="eyebrow reveal"><span class="n">05</span><span class="t">Condiciones</span></div>
- <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;align-items:end;margin-bottom:42px">
+ <div class="split-head" style="margin-bottom:42px">
    <h2 class="h2 reveal d1">Un modelo que<br>se autofinancia.</h2>
    <p class="lead reveal d2">AWWG no asume infraestructura ni equipo propio para operar el canal.</p>
  </div>
@@ -390,7 +400,7 @@ body[data-top="dark"] .side-nav{color:#fff}
 </section>
 
 <!-- CLOSING -->
-<section id="closing" class="sec sec--dark" data-theme="dark" data-title="closing" style="min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:100px 48px 80px">
+<section id="closing" class="sec sec--dark closing-sec" data-theme="dark" data-title="closing">
  <div class="blob" style="width:600px;height:600px;right:-8%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(190,255,0,.22),transparent 68%)"></div>
  <div class="wrap" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2">
    <div>
@@ -399,7 +409,7 @@ body[data-top="dark"] .side-nav{color:#fff}
    <p class="manifesto reveal d1" style="margin:0">Dos caminos.<br>Un mismo destino: <span class="lime">vuestro canal de segunda vida.</span></p>
    <div class="reveal d2" style="border-top:1px solid rgba(255,255,255,.1);padding-top:36px">
      <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px">Siguiente paso</div>
-     <p style="font-size:clamp(16px,1.6vw,20px);font-weight:750;letter-spacing:-.015em;line-height:1.3;color:#fff;margin:0;white-space:nowrap">Elegir modelo econ&oacute;mico y cerrar la fecha de kick-off.</p>
+     <p class="next-line" style="font-size:clamp(16px,1.6vw,20px);font-weight:750;letter-spacing:-.015em;line-height:1.3;color:#fff;margin:0">Elegir modelo econ&oacute;mico y cerrar la fecha de kick-off.</p>
    </div>
  </div>
 </section>
